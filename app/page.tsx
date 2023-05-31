@@ -1,22 +1,16 @@
 "use client"
-import Image from 'next/image'
 import { HiArrowRight } from 'react-icons/hi'
 import { useRouter } from 'next/navigation';
-
-
 
 export default function Home() {
 
     const router = useRouter();
-
     const redirect = () => {
         const url = `/notes`;
         router.push(url);
     };
 
     return (
-
-
         <div className="bg-custom-color min-h-screen flex flex-col items-center justify-center space-y-4">
             <img src="/add_notes.svg" className="h-[60vh] mx-auto" alt="Add Notes" />
 
