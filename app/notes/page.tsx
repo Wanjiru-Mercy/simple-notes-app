@@ -77,12 +77,12 @@ export default function NotesPage() {
 function Note({ note, className }: any) {
     const { id, title, content, created } = note || {};
 
-    let date = new Date(created);
-    let day = String(date.getDate()).padStart(2, '0');
-    let month = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let year = date.getFullYear();
+    // let date = new Date(created);
+    // let day = String(date.getDate()).padStart(2, '0');
+    // let month = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // let year = date.getFullYear();
 
-    let formattedDate = `${day}/${month}/${year}`;
+    // let formattedDate = `${day}/${month}/${year}`;
 
 
     return (
@@ -90,7 +90,7 @@ function Note({ note, className }: any) {
         <div className={`block p-4 rounded shadow transition duration-200 ease-in-out hover:shadow-lg overflow-y-auto overflow-x-hidden whitespace-normal break-words ${className}`}>
             <h2 className="font-semibold text-md mb-2">{title}</h2>
             <p className="text-md mb-3">{content}</p>
-            <p className="text-xs">{formattedDate}</p>
+            <p className="text-xs">{created}</p>
         </div>
 
     );
