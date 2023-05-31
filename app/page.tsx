@@ -21,7 +21,7 @@ export default function Home() {
             <img src="/add_notes.svg" className="h-[60vh] mx-auto" alt="Add Notes" />
 
             <div className="items-center">
-                <p className=" overflow-hidden whitespace-nowrap text-rose font-medium text-lg">
+                <p className=" overflow-hidden whitespace-nowrap text-rose font-medium text-lg flex justify-center">
                     For the Love of Notes: </p>
                 <p className="animate-typing overflow-hidden whitespace-nowrap border-r-2 border-r-rose pr-3  text-text-color font-mono text-xl">
                     Write, Edit, Repeat!</p>

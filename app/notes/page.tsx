@@ -18,7 +18,7 @@ async function getNotes() {
 
 export default function NotesPage() {
 
-    const [isOpen, setIsOpen] = useState(false); 
+    const [isOpen, setIsOpen] = useState(false);
     const [notes, setNotes] = useState<NoteType[]>([]);
 
     useEffect(() => {
@@ -58,7 +58,8 @@ export default function NotesPage() {
                 </div>
             </div>
 
-            <div className='mt-2 grid grid-cols-4 gap-4 p-4 grid-rows-1 items-start '>
+            <div className='mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 items-start '>
+
                 {notes?.map((note, index) => {
                     const color = colors[index % colors.length];
                     return <Note key={note.id} note={note} className={color} />;
@@ -66,7 +67,7 @@ export default function NotesPage() {
             </div>
 
             {isOpen && (
-                       <CreateNote setIsOpen={setIsOpen} refreshNotes={setNotes} getNotes={getNotes} />
+                <CreateNote setIsOpen={setIsOpen} refreshNotes={setNotes} getNotes={getNotes} />
             )}
         </div>
 
@@ -85,12 +86,12 @@ function Note({ note, className }: any) {
 
 
     return (
-       
-            <div className={`block p-4 rounded shadow transition duration-200 ease-in-out hover:shadow-lg overflow-y-auto overflow-x-hidden whitespace-normal break-words ${className}`}>
-                <h2 className="font-semibold text-md mb-2">{title}</h2>
-                <p className="text-md mb-3">{content}</p>
-                <p className="text-xs">{formattedDate}</p>
-            </div>
-     
+
+        <div className={`block p-4 rounded shadow transition duration-200 ease-in-out hover:shadow-lg overflow-y-auto overflow-x-hidden whitespace-normal break-words ${className}`}>
+            <h2 className="font-semibold text-md mb-2">{title}</h2>
+            <p className="text-md mb-3">{content}</p>
+            <p className="text-xs">{formattedDate}</p>
+        </div>
+
     );
 }
