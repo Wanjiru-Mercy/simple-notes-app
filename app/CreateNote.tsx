@@ -14,7 +14,7 @@ export default function CreateNote({ setIsOpen, refreshNotes, getNotes }: Create
     const create = async (e: any) => {
         e.preventDefault();
 
-        await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
+        await fetch('https://my-notes-app.fly.dev/api/collections/notes/records', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function CreateNote({ setIsOpen, refreshNotes, getNotes }: Create
                     <button className="flex-shrink-0 bg-accent-color hover:bg-hover-color text-sm text-white px-4 py-2 rounded" type="submit">
                         Save
                     </button>
-                    <button className="flex-shrink-0 border-transparent text-accent-color hover:text-hover-color text-sm py-2 px-4 rounded " type="button">
+                    <button onClick={()=> handleCancel()} className="flex-shrink-0 border-transparent text-accent-color hover:text-hover-color text-sm py-2 px-4 rounded " type="button">
                         Cancel
                     </button>
                 </div>

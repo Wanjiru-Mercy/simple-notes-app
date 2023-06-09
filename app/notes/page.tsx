@@ -10,7 +10,7 @@ interface NoteType {
 };
 
 async function getNotes() {
-    const res = await fetch('http://127.0.0.1:8090/api/collections/notes/records', { cache: 'no-store' });
+    const res = await fetch('https://my-notes-app.fly.dev/api/collections/notes/records', { cache: 'no-store' });
     const data = await res.json();
     return data?.items as any[];
 }
